@@ -8,8 +8,8 @@ import com.qualcomm.robotcore.util.Range;
 import com.qualcomm.hardware.bosch.BNO055IMU;
 
 
-@Autonomous(name="calibrateTurns", group="DriveBot")
-public class calibrateTurns extends LinearOpMode {
+@Autonomous(name="CalibrateTurns", group="DriveBot")
+public class CalibrateTurns extends LinearOpMode {
 
     DriveBot robot = null;
 
