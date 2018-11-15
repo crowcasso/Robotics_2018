@@ -5,6 +5,18 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.Range;
 
+/*
+ * Torso    (torsoMotor)    - left joystick x  - turn whole arm left and right
+ * Shoulder (shoulderMotor) - left joystick y  - move shoulder up and down
+ * Elbow    (elbowServo)    - A-Y buttons      - move elbow up and down
+ * Pitch    (pitchServo)    - d-pad up-down    - tilt hand up and down
+ * Roll     (rollServo)     - d-pad left-right - turn hand
+ * Gripper  (gripperServo)  - X button         - close gripper slowly
+ *                          - B button         - open gripper slowly
+ *                          - right trigger    - open gripper all the way
+ *                          - right bumper     - close gripper all the way
+ */
+
 @TeleOp(name="ArmBot", group="ArmBot")
 public class ArmBot extends LinearOpMode {
 
