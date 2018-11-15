@@ -14,20 +14,7 @@ public class ArmBot extends LinearOpMode {
     public void runOpMode() throws InterruptedException
     {
         armBot = new HardwareArmBot(hardwareMap);
-
-        // put the torso into a known position
-        armBot.torsoMotor.setPower(-TORSO_SLOW);
-        while (!armBot.torsoLimit.isPressed() && opModeIsActive()) {
-            idle();
-        }
-        armBot.torsoMotor.setPower(TORSO_STOP);
-
-        // reset the encoder
-        armBot.torsoMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        armBot.torsoMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-
-        // bring the arm back to the front
-
+        initializeTorso();
 
         waitForStart();
 
@@ -98,5 +85,22 @@ public class ArmBot extends LinearOpMode {
 
         // show encoder value to help us set values
         telemetry.addData("TORSO", "Encoder: " + torsoEncoder);
+    }
+
+
+    public void initializeTorso()
+    {
+        // put the torso into a known position
+        armBot.torsoMotor.setPower(-TORSO_SLOW);
+        while (!armBot.torsoLimit.isPressed() && opModeIsActive()) {
+            idle();
+        }
+        armBot.torsoMotor.setPower(TORSO_STOP);
+
+        // reset the encoder
+        armBot.torsoMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        armBot.torsoMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
+        // TODO: bring the arm back to the front
     }
 }
