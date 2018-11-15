@@ -36,7 +36,7 @@ public class RobotHardware {
     // sensors
     public DigitalChannel touchSensor = null;
     public ColorSensor colorSensor = null;
-    public DistanceSensor distanceSensor = null;
+    //public DistanceSensor distanceSensor = null;
 
     public RobotHardware(HardwareMap hardwareMap) {
 
@@ -48,11 +48,13 @@ public class RobotHardware {
         leftMotor.setDirection(DcMotor.Direction.REVERSE);
         rightMotor.setDirection(DcMotor.Direction.FORWARD);
 
+        resetEncoders();
+
         // setup the sensors
         touchSensor = hardwareMap.get(DigitalChannel.class, "touchSensor");
         colorSensor = hardwareMap.get(ColorSensor.class, "colorSensor");
         colorSensor.enableLed(true);
-        distanceSensor = hardwareMap.get(DistanceSensor.class, "distanceSensor");
+        //distanceSensor = hardwareMap.get(DistanceSensor.class, "distanceSensor");
     }
 
     public void stop() {

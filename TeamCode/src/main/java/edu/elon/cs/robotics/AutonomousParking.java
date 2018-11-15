@@ -44,7 +44,7 @@ public class AutonomousParking extends LinearOpMode {
         robot.start(robot.NORMAL_POWER);
         while (robot.touchSensor.getState() == true && opModeIsActive()) {
 
-            double distance = robot.distanceSensor.getDistance(DistanceUnit.CM);
+            double distance = 1.0; //robot.distanceSensor.getDistance(DistanceUnit.CM);
             if (distance > farDistance) farDistance = distance;
             if (distance < closeDistance) closeDistance = distance;
 
