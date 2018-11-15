@@ -94,7 +94,7 @@ public class ArmBot extends LinearOpMode {
     {
         // put the torso into a known position
         armBot.torsoMotor.setPower(-TORSO_SLOW);
-        while (!armBot.torsoLimit.isPressed() && opModeIsActive()) {
+        while (!armBot.torsoLimit.isPressed()) {
             idle();
         }
         armBot.torsoMotor.setPower(TORSO_STOP);
