@@ -1,9 +1,11 @@
 package edu.elon.cs.robotics;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.Range;
 
+@TeleOp(name="ArmBot", group="ArmBot")
 public class ArmBot extends LinearOpMode {
 
     private HardwareArmBot armBot = null;
